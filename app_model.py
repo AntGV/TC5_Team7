@@ -12,19 +12,19 @@ app = Flask(__name__)
 # Enruta la landing page (endpoint /)
 @app.route("/", methods = ["GET"])
 def hello(): # Ligado al endopoint "/" o sea el home, con el método GET
-    texto = "Bienvenido a la API predictora del tiempo desarrollada por el Team-7" + "\n" + "\n" + \
+    texto = "Bienvenido a la API predictora del tiempo desarrollada por el Team-7" <br><br> + \
         "Las variables necesarias para la predicción son:" + "\n" + \
-            "temp= hum= winds= prec= cloudc= atmp= uvi= season= vis= loc=" + "\n" + \
-            "temp (Temperatura - Temperature // float, medido en grados Celsius)" + "\n" + \
-            "hum (Humedad - Humidity // int, en porcentaje de humedad)" + "\n" + \
-            "winds (Velocidad del viento - Wind Speed // float, en kilómetros por hora)" + "\n" + \
-            "prec (Precipitaciones - Precipitation // float, en porcentaje de precipitaciones)" + "\n" + \
-            "cloudc (Cobertura de nubes - Cloud Cover // str [clear, partly cloudy, cloudy, overcast])" + "\n" + \
-            "atmp (Presión atmosférica - Atmospheric Pressure // float, en milibares)" + "\n" + \
-            "uvi (Índice UV - UV Index // int, con valores entre 0 y 14)" + "\n" + \
-            "season (Estación - Season // str, [Spring, Summer, Autumn, Winter])" + "\n" + \
-            "vis (Visibilidad - Visibility // float, rango de visibilidad en kilómetros)" + "\n" + \
-            "loc (Ubicación - Location // str [coastal, inland, mountain])" + "\n"
+        "temp= hum= winds= prec= cloudc= atmp= uvi= season= vis= loc=" + "\n" + \
+        "temp (Temperatura - Temperature // float, medido en grados Celsius)" + "\n" + \
+        "hum (Humedad - Humidity // int, en porcentaje de humedad)" + "\n" + \
+        "winds (Velocidad del viento - Wind Speed // float, en kilómetros por hora)" + "\n" + \
+        "prec (Precipitaciones - Precipitation // float, en porcentaje de precipitaciones)" + "\n" + \
+        "cloudc (Cobertura de nubes - Cloud Cover // str [clear, partly cloudy, cloudy, overcast])" + "\n" + \
+        "atmp (Presión atmosférica - Atmospheric Pressure // float, en milibares)" + "\n" + \
+        "uvi (Índice UV - UV Index // int, con valores entre 0 y 14)" + "\n" + \
+        "season (Estación - Season // str, [Spring, Summer, Autumn, Winter])" + "\n" + \
+        "vis (Visibilidad - Visibility // float, rango de visibilidad en kilómetros)" + "\n" + \
+        "loc (Ubicación - Location // str [coastal, inland, mountain])" + "\n"
 
     return texto
 
