@@ -12,7 +12,7 @@ app = Flask(__name__)
 # Enruta la landing page (endpoint /)
 @app.route("/", methods = ["GET"])
 def hello(): # Ligado al endopoint "/" o sea el home, con el método GET
-    texto = "Bienvenido a la API predictora del tiempo desarrollada por el Team-7" <br><br> + \
+    texto = "Bienvenido a la API predictora del tiempo desarrollada por el Team-7" + "\n" + \
         "Las variables necesarias para la predicción son:" + "\n" + \
         "temp= hum= winds= prec= cloudc= atmp= uvi= season= vis= loc=" + "\n" + \
         "temp (Temperatura - Temperature // float, medido en grados Celsius)" + "\n" + \
