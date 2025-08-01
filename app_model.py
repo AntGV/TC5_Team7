@@ -26,20 +26,21 @@ def hello(): # Ligado al endopoint "/" o sea el home, con el método GET
     #     "vis (Visibilidad - Visibility // float, rango de visibilidad en kilómetros)" + "\n" + \
     #     "loc (Ubicación - Location // str [coastal, inland, mountain])" + "\n"
 
-    return 
+    return '''
         <h1>Bienvenido a la API predictora del tiempo desarrollada por el Team-7</h1>
-        <h2>Las variables necesarias para la predicción son:</h2><br>
-        <h3>temp= hum= winds= prec= cloudc= atmp= uvi= season= vis= loc=</h3><br>
-        <h4>temp (Temperatura - Temperature // float, medido en grados Celsius)</h4><br>
-        <h5>hum (Humedad - Humidity // int, en porcentaje de humedad)</h5><br>
-        <h6>winds (Velocidad del viento - Wind Speed // float, en kilómetros por hora)</h6><br>
-        <h7>prec (Precipitaciones - Precipitation // float, en porcentaje de precipitaciones)</h7><br>
-        <h8>cloudc (Cobertura de nubes - Cloud Cover // str [clear, partly cloudy, cloudy, overcast])</h8><br>
-        <h9>atmp (Presión atmosférica - Atmospheric Pressure // float, en milibares)</h9><br>
-        <h10>uvi (Índice UV - UV Index // int, con valores entre 0 y 14)</h10><br>
-        <h11>season (Estación - Season // str, [Spring, Summer, Autumn, Winter])</h11><br>
-        <h12>vis (Visibilidad - Visibility // float, rango de visibilidad en kilómetros)</h12><br>
-        <h13>loc (Ubicación - Location // str [coastal, inland, mountain])</h13><br>
+        <h2>Las variables necesarias para la predicción son:</h2>
+        <h3>temp= hum= winds= prec= cloudc= atmp= uvi= season= vis= loc=</h3>
+        <h4>temp (Temperatura - Temperature // float, medido en grados Celsius)</h4>
+        <h5>hum (Humedad - Humidity // int, en porcentaje de humedad)</h5>
+        <h6>winds (Velocidad del viento - Wind Speed // float, en kilómetros por hora)</h6>
+        <h7>prec (Precipitaciones - Precipitation // float, en porcentaje de precipitaciones)</h7>
+        <h8>cloudc (Cobertura de nubes - Cloud Cover // str [clear, partly cloudy, cloudy, overcast])</h8>
+        <h9>atmp (Presión atmosférica - Atmospheric Pressure // float, en milibares)</h9>
+        <h10>uvi (Índice UV - UV Index // int, con valores entre 0 y 14)</h10>
+        <h11>season (Estación - Season // str, [Spring, Summer, Autumn, Winter])</h11>
+        <h12>vis (Visibilidad - Visibility // float, rango de visibilidad en kilómetros)</h12>
+        <h13>loc (Ubicación - Location // str [coastal, inland, mountain])</h13>
+        '''
 
 # Enruta la funcion al endpoint /api/v1/predict
 @app.route("/api/v1/predict", methods = ["GET"])
