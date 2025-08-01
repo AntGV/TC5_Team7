@@ -34,18 +34,18 @@ def predict(): # Ligado al endpoint '/api/v1/predict', con el método GET
     with open("modelo_clasificador.pkl", "rb") as f:
         model = pickle.load(f)
 
-    temp = request.args.get("Temperature", None)
-    hum = request.args.get("Humidity", None)
-    winds = request.args.get("Wind_Speed", None)
-    prec = request.args.get("Precipitation", None)
-    cloudc = request.args.get("Cloud_Cover", None)
-    atmp = request.args.get("Atm_Press", None)
-    uvi = request.args.get("UV_I", None)
-    season = request.args.get("Season", None)
-    vis = request.args.get("Visibility", None)
-    loc = request.args.get("Location", None)
+    Temperature = request.args.get("Temperature", None)
+    Humidity = request.args.get("Humidity", None)
+    Wind_Speed = request.args.get("Wind_Speed", None)
+    Precipitation = request.args.get("Precipitation", None)
+    Cloud_Cover = request.args.get("Cloud_Cover", None)
+    Atm_Press = request.args.get("Atm_Press", None)
+    UV_I = request.args.get("UV_I", None)
+    Season = request.args.get("Season", None)
+    Visibility = request.args.get("Visibility", None)
+    Location = request.args.get("Location", None)
 
-    prediction = model.predict([[float(temp),float(hum),float(winds),float(prec),float(cloudc),float(atmp),float(uvi),float(season),float(vis),float(loc)]])
+    prediction = model.predict([[float(Temperature),float(Humidity),float(Wind_Speed),float(Precipitation),float(Cloud_Cover),float(Atm_Press),float(UV_I),float(Season),float(Visibility),float(Location)]])
     return jsonify({'predictions': prediction[0]})
     # if jsonify({'predictions': prediction[0]}) == 0:
     #     etiqueta = "Sunny, thank you for the sunshine bouquet"
