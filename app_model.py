@@ -27,7 +27,7 @@ def hello(): # Ligado al endopoint "/" o sea el home, con el método GET
     #     "loc (Ubicación - Location // str [coastal, inland, mountain])" + "\n"
 
     return 
-        <h1>Bienvenido a la API predictora del tiempo desarrollada por el Team-7</h1><br><br>
+        <h1>Bienvenido a la API predictora del tiempo desarrollada por el Team-7</h1>
         <h2>Las variables necesarias para la predicción son:</h2><br>
         <h3>temp= hum= winds= prec= cloudc= atmp= uvi= season= vis= loc=</h3><br>
         <h4>temp (Temperatura - Temperature // float, medido en grados Celsius)</h4><br>
