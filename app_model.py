@@ -46,17 +46,17 @@ def predict(): # Ligado al endpoint '/api/v1/predict', con el método GET
     loc = request.args.get("Location", None)
 
     prediction = model.predict([[float(temp),float(hum),float(winds),float(prec),float(cloudc),float(atmp),float(uvi),float(season),float(vis),float(loc)]])
-    #return jsonify({'predictions': prediction[0]})
-    if jsonify({'predictions': prediction[0]}) == 0:
-        etiqueta = "Sunny, thank you for the sunshine bouquet"
-    elif jsonify({'predictions': prediction[0]}) == 1:
-        etiqueta = "Cloudy, the sky is gray and white and cloudy"
-    elif jsonify({'predictions': prediction[0]}) == 2:
-        etiqueta = "On and on the rain will fall"
-    elif jsonify({'predictions': prediction[0]}) == 2:
-        etiqueta = "Let it snow!, Let it snow!, Let it snow!"
+    return jsonify({'predictions': prediction[0]})
+    # if jsonify({'predictions': prediction[0]}) == 0:
+    #     etiqueta = "Sunny, thank you for the sunshine bouquet"
+    # elif jsonify({'predictions': prediction[0]}) == 1:
+    #     etiqueta = "Cloudy, the sky is gray and white and cloudy"
+    # elif jsonify({'predictions': prediction[0]}) == 2:
+    #     etiqueta = "On and on the rain will fall"
+    # elif jsonify({'predictions': prediction[0]}) == 2:
+    #     etiqueta = "Let it snow!, Let it snow!, Let it snow!"
     
-    return etiqueta
+    # return etiqueta
 
 
 if __name__ == '__main__':
