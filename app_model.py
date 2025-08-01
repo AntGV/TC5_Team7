@@ -59,18 +59,33 @@ def predict(): # Ligado al endpoint '/api/v1/predict', con el método GET
     Visibility = request.args.get("Visibility", None)
     Location = request.args.get("Location", None)
 
-    prediction = model.predict([[float(Temperature),int(Humidity),float(Wind_Speed),float(Precipitation),str(Cloud_Cover),float(Atm_Press),int(UV_I),str(Season),float(Visibility),str(Location)]])
+    predict_df = pd.DataFrame({
+        'Temperature':float(Temperature),
+        'Humidity':int(Humidity),
+        'Wind_Speed':float(Wind_Speed),
+        'Precipitation':float(Precipitation),
+        'Cloud_Cover':str(Cloud_Cover),
+        'Atm_Press':float(Atm_Press),
+        'UV_I':int(UV_I),
+        'Season':str(Season),
+        'Visibility':float(Visibility),
+        'Location':str(Location),
+    }, index=[0])
+
+    print(predict_df)
+
+    prediction = model.predict(predict_df)
+
     #return jsonify({'predictions': prediction[0]})
-    if jsonify({'predictions': prediction[0]}) == 0:
-        etiqueta = "Sunny, thank you for the sunshine bouquet"
-    elif jsonify({'predictions': prediction[0]}) == 1:
-        etiqueta = "Cloudy, the sky is gray and white and cloudy"
-    elif jsonify({'predictions': prediction[0]}) == 2:
-        etiqueta = "On and on the rain will fall"
-    elif jsonify({'predictions': prediction[0]}) == 2:
-        etiqueta = "Let it snow!, Let it snow!, Let it snow!"
-    
-    return etiqueta
+
+    if prediction[0] == 0:
+        return "Sunny, thank you for the sunshine bouquet"
+    elif prediction[0] == 1:
+        return "Cloudy, the sky is gray and white and cloudy"
+    elif prediction[0] == 2:
+        return "On and on the rain will fall"
+    elif prediction[0] == 3:
+        return "Let it snow!, Let it snow!, Let it snow!"
 
 
 if __name__ == '__main__':
